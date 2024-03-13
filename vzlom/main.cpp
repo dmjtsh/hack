@@ -1,6 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 
+#include "hack.h"
 #include "menu.h"
 
 using namespace sf;
@@ -14,7 +15,7 @@ int main(int argc, const char* argv[])
     Sound sound {};
     
     PlayMenuSound(&sound, &buffer);
-    DisplayStartMenu(&window, (argc >= 2) ? (argv[1]) : "crackme.com" );
+    DisplayStartMenu(&window, (argc >= 2) ? (argv[1]) : "CRACKME.COM");
     DisplayEndMenu(&window);
 
     return 0;

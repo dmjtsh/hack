@@ -2,6 +2,7 @@
 #include <assert.h>
 
 #include "menu.h"
+#include "hack.h"
 
 /*
 *   MENU BUTTON CLASS
@@ -94,7 +95,7 @@ void DisplayStartMenu(RenderWindow* window, const char* prog_name)
             {
                 if (button.IsMouseOver(window)) 
                 {
-                    HackProgram(crackme_name);
+                    HackProgram(prog_name);
                     return;
                 }
             }

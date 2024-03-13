@@ -1,9 +1,17 @@
-#include "stdio.h"
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>
+
+#include "hack.h"
 
 void HackProgram(const char* prog_name)
 {
-    FILE* prog_file = fopen(prog_name, "wr");
+    FILE* prog_file = fopen(prog_name, "r+");
 
-    fseek(prog_file, 190, SEEK_SET);
-    fwrite(90 ,sizeof(char),, prog_file);
+    fseek (prog_file, PLACE_IN_FILE_TO_WRITE, SEEK_SET);
+
+    for (size_t i = 0; i < SYMBS_TO_WRITE_COUNT; i++)
+        fputc(NOP_SYMB, prog_file);
+
+    fclose(prog_file);
 }
